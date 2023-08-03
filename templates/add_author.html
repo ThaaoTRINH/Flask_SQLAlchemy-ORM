@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="add_author_form">
+<h2>ADD AUTHOR</h2>
+    <h4>{{ return_message }}</h4>
+<form action="{{ url_for('add_author') }}" method="post">
+    <label for="author_name">Author name: </label>
+    <input type="text" name="author_name" id="author_name" required><br><br>
+    <label for="birth_date">Birth date of author (DD/MM/YYYY):  </label>
+    <input type="date" name="birth_date" id="birth_date" required><br><br>
+    <label for="date_of_death">Date_of_death of author (DD/MM/YYYY): </label>
+    <input type="date" name="date_of_death" id="date_of_death"><br><br>
+    <input type="submit" value="Add author">
+</form>
+    <a id="back" href="/"> Back to home page! </a><br>
+
+<!--<p>{{ name }} - {{ birth_date }} - {{ date_of_death }} </p>-->
+</div>
+
+{% endblock %}

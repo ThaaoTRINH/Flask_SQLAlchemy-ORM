@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="update_book_form">
+<h2>UPDATE BOOK ID: {{ book.id }}</h2>
+<h4> {{ return_message }} </h4>
+    <p> {{ book.id  }} - {{ book.title }} - {{ book.publication_year }}  </p>
+
+<!--<form action="{{ url_for('update_book', id=book.id) }}" method="post">-->
+    <form method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="{{ book.title }}"><br>
+
+        <label for="isbn">ISBN:</label>
+        <input type="text" name="isbn" id="isbn" value="{{ book.isbn }}"><br>
+
+        <label for="publication_year">Publication Year:</label>
+        <input type="number" name="publication_year" id="publication_year" value="{{ book.publication_year }}"><br>
+
+        <input type="submit" value="Update Book">
+    </form>
+
+
+    <a id="back" href="/"> Back to home page! </a>
+
+    </div>
+{% endblock %}

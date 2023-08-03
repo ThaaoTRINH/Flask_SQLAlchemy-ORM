@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="add_book_form">
+<h2>ADD BOOK</h2>
+    <h4>{{ return_message }}</h4>
+<form action="{{ url_for('add_book') }}" method="post">
+
+<!--    <label for="book_id">Book id: </label>-->
+<!--    <input type="text" name="book_id" id="book_id" ><br><br>-->
+
+    <label for="book_isbn">Book isbn: </label>
+    <input type="text" name="book_isbn" id="book_isbn" required>
+    <sub style="color: #BEBEBE;">Chinua Achebe, 'Things..' - ISBN: CAT </sub><br><br>
+    <label for="book_title">The title of book:  </label>
+    <input type="text" name="book_title" id="book_title" required><br><br>
+
+    <label for="publication_year">The publication_year: </label>
+    <input type="number" name="publication_year" id="publication_year"><br><br>
+
+    <label for="author_name">Author name: </label>
+    <input type="text" name="author_name" id="author_name"><br><br>
+
+    <input type="submit" value="Add book">
+
+</form>
+    <a id="back" href="/"> Back to home page! </a>
+
+<!--<p>{{ isbn }} - {{ title }} - {{ publication_year }} </p>-->
+</div>
+
+{% endblock %}

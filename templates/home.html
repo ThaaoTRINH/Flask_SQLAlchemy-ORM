@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>BOOK ALCHEMY APPLICATION</h1>
+
+<div class="search">
+<!--    <form action="{{ url_for('search') }}" method="post">-->
+    <form action="/search" method="post">
+        <input type="text" name="key_word_search" id="key_word_search" placeholder="book title / author name">
+        <input type="submit" value="Search..">
+    </form>
+    <h4>  {{ search_result }} </h4>
+</div>
+
+<div id="authors_list" class="box">
+    <h3>The list of authors</h3>
+    <a class="button_a" href="/add_author">Add author</a>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>BIRTH DATE</th>
+            <th>DATE OF DEATH</th>
+            <th> </th>
+        </tr>
+        {% for author in authors %}
+        <tr>
+            <td>{{ author.id  }}</td>
+            <td>{{ author.name }}</td>
+            <td>{{ author.birth_date }}</td>
+            <td>{{ author.date_of_death }}</td>
+            <td>
+                <div class="choose_button">
+                    <form action="/author/{{ author.id }}/delete" method="post">
+                        <input type="submit" value="Delete">
+                    </form>
+                    <div class="button_sub_a">
+                    <a href="{{ url_for('update_author', id=author.id) }}">Update</a>
+                        </div>
+
+                    </div>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<div id="books_list" class="box">
+    <h3>Book List</h3>
+    <a class="button_a" href="/add_book">Add book</a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Publication Year</th>
+            <th>Author ID</th>
+            <th> </th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.id }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.publication_year }}</td>
+            <td>{{ book.author_id }}</td>
+            <td>
+                <div class="choose_button">
+                    <form action="/book/{{ book.id }}/delete" method="post">
+                        <input type="submit" value="Delete">
+                    </form>
+                    <div class="button_sub_a">
+                    <a href="{{ url_for('update_book', id=book.id) }}">Update</a>
+                        </div>
+                    </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<hr>
+
+{% endblock %}

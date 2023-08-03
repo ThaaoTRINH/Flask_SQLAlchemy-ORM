@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="update_author_form">
+<h2>UPDATE AUTHOR {{ author.id }}</h2>
+        <h4> {{ return_message }} </h4>
+<p>{{ author }}</p>
+<form method="post">
+
+    <label for="name">Author name:</label>
+    <input type="text" name="name" id="name" value="{{ author.name }}"><br>
+
+    <label for="birth_date">Birth date:</label>
+    <input type="date" name="birth_date" id="birth_date" value="{{ author.birth_date }}"><br>
+
+    <label for="date_of_death">Date of death:</label>
+    <input type="date" name="date_of_death" id="date_of_death" value="{{ author.date_of_death }}"><br>
+
+    <input type="submit" value="Update Author">
+
+</form>
+
+    <a id="back" href="/"> Back to home page! </a>
+
+    </div>
+{% endblock %}

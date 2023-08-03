@@ -1,0 +1,132 @@
+/*@import url('')*/
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #72A0C1;
+    font-family: 'Montserrat', sans-serif;
+    }
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+}
+h1{
+    color: white;
+    margin: 80px 0 50px 0;
+}
+.search input[type='text']{
+    padding: 10px 40px;
+    border-radius: 8px;
+}
+.search input[type='submit']{
+    margin-left: 10px;
+    padding: 10px 40px;
+}
+.search input[type='text']{
+    opacity: 1
+}
+.search input[value="book title / author name"]{
+    opacity:0.7;
+}
+h3{
+    border-bottom: 1px solid #6699CC;
+    padding-bottom: 0.em;
+    font-size: 2em;
+}
+h4, h5{
+    color: #0039a6;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 80px;
+}
+td, th{
+    border-bottom: 1px solid #6699CC;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table, tr, th, td{
+    padding: 14px 25px;
+}
+
+.button_a, #add_author_form input[type='submit'],
+#add_book_form input[type='submit'], #update_book_form input[type='submit'],
+#update_author_form input[type='submit']{
+  background-color: #007FFF;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+  margin-bottom: 40px;
+  }
+
+.button_a:hover, #add_author_form input[type='submit']:hover,
+#add_book_form input[type='submit']:hover, #update_book_form input[type='submit']:hover,
+#update_author_form input[type='submit']:hover {
+    background-color: #0066b2;
+}
+
+.box{
+    width:65%;
+    padding: 30px 80px;
+    margin: 30px auto;
+    background-color: #F0F8FF;
+}
+.choose_button{
+    display: flex;
+    flex-direction: row;
+    }
+
+.choose_button input[value="Delete"]{
+    display: inline; /* Display the form inline with text */
+    border: none;
+    background: red;
+    font-size: 0.8em;
+    color: white;
+    padding: 8px 15px;
+    margin: 0 7px;
+    height: 2.6em;
+    cursor: pointer;
+}
+.button_sub_a{
+  background-color: #007FFF;
+  padding: 7px 25px;
+}
+.choose_button a{
+    text-align: center;
+  text-decoration: none;
+    color: white;
+}
+.choose_button a{
+    margin: auto;
+    font-size: 0.8em;
+    align-items: center;
+}
+#add_author_form, #add_book_form, #update_book_form, #update_author_form{
+    width: 45%;
+    padding: 50px 50px;
+    margin: 0 auto;
+    background-color: #F0F8FF;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+}
+#back{
+    float: left;
+    height: 0.8em;
+    text-decoration: none;
+    margin-top: 20px;
+    color: #007FFF;
+    }
+#back:hover{
+    font-weight: bold;
+}
